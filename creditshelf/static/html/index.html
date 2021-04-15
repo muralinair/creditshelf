@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creditshelf Coding Challenge</title>
+    {{ server|json_script:"server" }}
+    {{ key|json_script:"key" }}
+    <script src="{% static "js/angular.min.js" %}"></script>
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/index.js" %}"></script>
+    <script src="{% static "js/constants.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script type="text/javascript">
+        const DJANGO_PARKING_ICON = "{% static "images/parking_lot_maps.png" %}";
+    </script>
+
+
+</head>
+<body class="d-flex" ng-app="creditshelf" ng-controller="rootController">
+    <div class="jumbotron navbar">
+        <img src="{% static "images/logo2.png" %}" class="img-rounded img resize" alt="Creditshelf">
+        <div class="text-center">
+            {% verbatim %}
+            <input type="checkbox" checked ng-model="bInvalidLocations" ng-change="updateLocations()"> Remove Invalid Locations<br>
+            Borough:
+                <select ng-model="borough" ng-change="getBorough()">
+                    <option value="">--Select Borough--</option>
+                    <option ng-repeat="option in dropdown" value="{{option}}">{{option}}</option>
+                </select>
+            <div class="content">
+                <table>
+                    <tr>
+                        <td>Number of cycles killed:</td>
+                        <td><h5 style="display: inline-block;">{{ no_of_killed }}</h5></td>
+                    </tr><tr>
+                        <td>Number of cycles injured:</td>
+                        <td><h5 style="display: inline-block;">{{ no_of_injured }}</h5></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div>
+                <input type="checkbox" ng-model="bShowStations" ng-change="updateStations()">Show Bike Stations
+                <div id="googleMap" ></div>
+                <div id="panel"></div>
+            </div>
+            {% endverbatim %}
+        </div>
+        </div>
+
+    </div>
+</div>
+{#<div class="jumbotron text-center">#}
+{#  #}
+{#</div>#}
+{#<div >#}
+
+
+</div>
+</body>
+</html>
