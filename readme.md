@@ -62,8 +62,8 @@ Note: This project assues that
     10. goto link mentioned in the console after server has started.
     
 This is how page would look like on startup:
-![alt text](https://github.com/muralinair/credishelfcodingchallenge/blob/1f1b320f237bab5d18a9ef4441a1db96dda42f4c/creditshelf/static/images/before_borough.png?raw=true)
+![alt text](https://github.com/muralinair/creditshelf/blob/120458d79d66d97b2811e7737076354a34c5c92f/creditshelf/static/images/before_borough.png?raw=true)
 This is how page would look like after you have selected Borough:
-![alt text](https://github.com/muralinair/credishelfcodingchallenge/blob/1f1b320f237bab5d18a9ef4441a1db96dda42f4c/creditshelf/static/images/after_borough.png?raw=true)
+![alt text](https://github.com/muralinair/creditshelf/blob/120458d79d66d97b2811e7737076354a34c5c92f/creditshelf/static/images/after_borough.png?raw=true)
     
     
