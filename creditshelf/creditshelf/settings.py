@@ -123,4 +123,4 @@ STATICFILES_DIRS = [
 
 PHANTOMJS_EXE = BASE_DIR / 'drivers/phantomjs/bin/phantomjs.exe'
 
-API_KEY="AIzaSyBZ9rbAzH7tH-FPIZPNf7YKbaqmuwY7cmw"
+API_KEY="<your_key>"
