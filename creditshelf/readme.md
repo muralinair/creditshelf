@@ -60,9 +60,9 @@ Note: This project assues that
                 This will start local dev server
     10. goto link mentioned in the console after server has started.
     
-    This is how page would look like on startup:
-    ![alt text](https://github.com//muralinair/CreditshelfCodingchallenge/blob/main/before_borough.jpg?raw=true)
-    This is how page would look like after you have selected Borough:
-    ![alt text](https://github.com//muralinair/CreditshelfCodingchallenge/blob/main/after_borough.jpg?raw=true)
+This is how page would look like on startup:
+![alt text](https://github.com/muralinair/CreditshelfCodingchallenge/blob/46f2bdb0e954e91754f3424963e2a42324b3a6f9/creditshelf/static/images/before_borough.png?raw=true)
+This is how page would look like after you have selected Borough:
+![alt text](https://github.com/muralinair/CreditshelfCodingchallenge/blob/46f2bdb0e954e91754f3424963e2a42324b3a6f9/creditshelf/static/images/after_borough.png?raw=true)
     
     
