@@ -4,12 +4,7 @@
 /junk.py
 /main.py
 /test.py
-/creditshelf/api/migrations/
-/creditshelf/dataextraction/migrations/
-/creditshelf/frontend/migrations/
 /creditshelf/db.sqlite3
 /creditshelf/ghostdriver.log
-/dropdown/
-/junk file/
 /.idea/
 __pycache__/
