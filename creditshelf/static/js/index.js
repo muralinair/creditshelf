@@ -39,8 +39,8 @@
                     }
                 }
                 $rootScope.location = locations;
-                $scope.no_of_killed=$scope.no_of_killed-invalid_killed;
-                $scope.no_of_injured=$scope.no_of_injured-invalid_injured;
+                $scope.no_of_killed=actual_killed-invalid_killed;
+                $scope.no_of_injured=actual_injured-invalid_injured;
             } else {
                 $scope.dropdown = result;
                 $rootScope.location=allBoroughLocation;
@@ -53,6 +53,8 @@
         $scope.getBorough = function () {
             let no_of_killed = 0;
             let no_of_injured = 0;
+            let no_invalid_killed=0;
+            let no_invalid_injured=0;
             let harmed = [];
             let harmed_at_borough = [];
             let location = []
@@ -62,17 +64,19 @@
                 $http.get(api_harmed).then(function (response) {
                     harmed = response.data;
                 }).then(function () {
+                    let bCounter=false;
+
                     harmed_at_borough.forEach(function (value, index) {
                         harmed.forEach(function (value_harmed, index) {
                             if (value_harmed.collision_id === value.collision_id) {
+                                bCounter=true;
                                 no_of_killed = no_of_killed + value_harmed.cycl_killed;
                                 no_of_injured = no_of_injured + value_harmed.cycl_injured;
                                 if(parseFloat(value.location_lat) === 0 || parseFloat(value.location_log) ===0 ){
-                                    invalid_killed=invalid_killed + value_harmed.cycl_killed;
-                                    invalid_injured=invalid_injured + value_harmed.cycl_injured;
+                                    no_invalid_killed=no_invalid_killed + value_harmed.cycl_killed;
+                                    no_invalid_injured=no_invalid_injured + value_harmed.cycl_injured;
                                 }
                                 if (value_harmed.cycl_killed > 0 || value_harmed.cycl_injured > 0) {
-
                                     location.push({
                                         lat: parseFloat(value.location_lat),
                                         lng: parseFloat(value.location_log),
@@ -82,13 +86,20 @@
                             }
                         })
                     });
+                    if(!bCounter){
+                        no_of_killed=0;
+                        no_of_injured=0;
+                        no_invalid_killed=0;
+                        no_invalid_injured=0;
+                    }
                 }).then(function () {
-                    $scope.no_of_killed = no_of_killed;
-                    $scope.no_of_injured = no_of_injured;
                     actual_killed=no_of_killed;
                     actual_injured=no_of_injured;
+                    invalid_killed=no_invalid_killed;
+                    invalid_injured=no_invalid_injured;
                     $rootScope.location = location;
                     allBoroughLocation=location;
+                    $scope.updateLocations();
                 }).then(function (){
                     $scope.updateMaps();
                 });
