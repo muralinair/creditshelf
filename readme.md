@@ -14,7 +14,7 @@ Note: This project assues that
             run <virtual environment name>/Scripts/activate.bat
     3. This should add (<virtual env name>) to your prompt.
 
-    4.  Run git pull to download the repository after forking.
+    4.  Run git commands to download the repository after forking.
         Note: Code is in main branch.
     5.  Run pip install -r requirements.txt
     6.  Goto Django project folder where manage.py is situated.
