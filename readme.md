@@ -15,19 +15,19 @@ Note: This project assues that
     3. This should add (<virtual env name>) to your prompt.
 
     4.  Run git pull to download the repository after forking.
-        Note: Code is in master branch.
+        Note: Code is in main branch.
     5.  Run pip install -r requirements.txt
-    6.  Goto Django prject folder where manage.py is situated.
-    7.  Run the following commands 
-                python manage.py makemigrations
-                python manage.py migrate
+    6.  Goto Django project folder where manage.py is situated.
+    7.  Run the following commands(* mandatory)
+                * python manage.py makemigrations
+                * python manage.py migrate
                 (optional): If you wish to see models in admin page
                         python manage.py createsuperuser
-                            and endter details required on console.
-                python manage.py syncdb
+                            and enter details required on console.
+                * python manage.py syncdb
                     This will get details from web(both web and csv) and save it to models/DB.
                     This operation might take time. ~8mins depending on your internet speed.
-    8.  Goto Settings.py in creditshelf/creditshelf folder and copy API key into API_KEY variable.
+    8.  Goto Settings.py in creditshelf/creditshelf folder and copy Maps API key into API_KEY variable.
         Note: If you don't have API key you can follow below given instructions to get one.
             This project uses Google Maps API and Google Directions API to render few features. This 
             only works with a valid API Key as free support for maps and directions API has been depricated.
