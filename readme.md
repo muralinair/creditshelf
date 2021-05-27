@@ -1,6 +1,4 @@
-# Creditshelf Coding Challenge
-
-This is a demo repo for Credishelf recruting
+# Creditshelf
 
 Note: This project assues that  
     1. You are running on Windows  
